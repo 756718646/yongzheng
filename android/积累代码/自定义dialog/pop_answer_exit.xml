@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    
+    <TextView 
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:textColor="#222322"
+        android:padding="8dp"
+        android:text="退出提示"/>
+    
+    <TextView 
+        android:id="@+id/content"
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eeeeee"
+        android:gravity="left"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="#222322"
+        android:textSize="12sp"
+        android:text="随机练习退出将不保存进度，是否确定退出?"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+        
+        <Button 
+            android:id="@+id/but1"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_but_title"
+            android:textColor="#ffffff"
+            android:text="取消"/>
+        
+        <Button 
+            android:id="@+id/but2"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_but_title"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="10dp"
+            android:text="确定"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

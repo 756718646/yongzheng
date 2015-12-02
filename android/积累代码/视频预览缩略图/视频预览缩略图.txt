@@ -1,0 +1,42 @@
+
+http://www.tuicool.com/articles/uqmUFfY
+
+首先是一个不太完美但非常简洁的解决方案，在多数手机测试通过，目前只有samsung TabletGTP7310未能正常显示，但能通过本文方案二解决。
+
+方案一：感谢@xjxuvup提供
+
+鉴于多数人都用过ThumbnailUtils.createVideoThumbnail()方法，该方法在2.x系统下可用，API LEVEL > 14时却只能返回null，以下为解决该问题方案：
+
+重写createVideoThumbnail()方法，如下
+
+
+	@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+	private Bitmap createVideoThumbnail(String url, int width, int height) {
+		Bitmap bitmap = null;
+		MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+		int kind = MediaStore.Video.Thumbnails.MINI_KIND;
+		try {
+			if (Build.VERSION.SDK_INT >= 14) {
+				retriever.setDataSource(url, new HashMap<String, String>());
+			} else {
+				retriever.setDataSource(url);
+			}
+			bitmap = retriever.getFrameAtTime();
+		} catch (IllegalArgumentException ex) {
+			// Assume this is a corrupt video file
+		} catch (RuntimeException ex) {
+			// Assume this is a corrupt video file.
+		} finally {
+			try {
+				retriever.release();
+			} catch (RuntimeException ex) {
+				// Ignore failures while cleaning up.
+			}
+		}
+		if (kind == Images.Thumbnails.MICRO_KIND && bitmap != null) {
+			bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height,
+					ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
+		}
+		return bitmap;
+	}
+	
