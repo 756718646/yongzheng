@@ -1,0 +1,261 @@
+本帖最后由 蚊子爱壁虎 于 2011-5-20 17:46 编辑Dreamweaver快捷键菜单命令文件(F)	
+    新建(N)...	Ctrl+N
+    打开(O)...	Ctrl+O
+    在 Bridge 中浏览(B)...	Ctrl+Alt+O
+    在框架中打开(F)...	Ctrl+Shift+O
+    关闭(C)	Ctrl+W
+    全部关闭(E)	Ctrl+Shift+W
+    保存(S)	Ctrl+S
+    另存为(A)...	Ctrl+Shift+S
+    打印代码(P)...	Ctrl+P
+    检查页(H)	
+        链接(L)	Shift+F8
+    验证	
+        标记(M)	Shift+F6
+编辑(E)	
+    还原(U)	Ctrl+Z,Alt+BkSp
+    重做(R)	Ctrl+Y,Ctrl+Shift+Z
+    剪切(T)	Ctrl+X,Shift+Del
+    拷贝(C)	Ctrl+C,Ctrl+Ins
+    选择性粘贴(S)...	Ctrl+Shift+V
+    全选(A)	Ctrl+A
+    选择父标签(G)	Ctrl+[
+    选择子标签(H)	Ctrl+]
+    查找和替换(F)...	Ctrl+F
+    查找所选(S)	Shift+F3
+    查找下一个(N)	F3
+    转到行(G)	Ctrl+G
+    显示代码提示(H)	Ctrl+Space
+    刷新代码提示(F)	Ctrl+.
+    缩进代码(I)	Ctrl+Shift+>
+    凸出代码(O)	Ctrl+Shift+<
+    平衡大括弧(B)	Ctrl+'
+    代码折叠	
+        折叠所选	Ctrl+Shift+C
+        折叠外部所选	Ctrl+Alt+C
+        扩展所选	Ctrl+Shift+E
+        折叠完整标签	Ctrl+Shift+J
+        折叠外部完整标签	Ctrl+Alt+J
+        扩展全部	Ctrl+Alt+E
+    首选参数(P)...	Ctrl+U
+查看(V)	
+    放大(Z)	Ctrl+=
+    缩小(O)	Ctrl+-
+    缩放比率(F)	
+        50%	Ctrl+Alt+5
+        100%	Ctrl+Alt+1
+        200%	Ctrl+Alt+2
+        300%	Ctrl+Alt+3
+        400%	Ctrl+Alt+4
+        800%	Ctrl+Alt+8
+        1600%	Ctrl+Alt+6
+    符合所选(S)	Ctrl+Alt+0
+    符合全部(L)	Ctrl+Shift+0
+    符合宽度(W)	Ctrl+Alt+Shift+0
+    切换视图(S)	Ctrl+Alt+`
+    刷新设计视图(E)	F5
+    服务器调试(U)	Ctrl+Shift+G
+    动态数据(L)	Ctrl+Shift+R
+    文件头内容(H)	Ctrl+Shift+H
+    表格模式(T)	
+        扩展表格模式(E)	F6
+        布局模式(L)	Alt+F6
+    可视化助理(V)	
+        隐藏所有(H)	Ctrl+Shift+I
+    标尺(R)	
+        显示(S)	Ctrl+Alt+R
+    网格设置(G)...	
+        显示网格(S)	Ctrl+Alt+G
+        靠齐到网格(N)	Ctrl+Alt+Shift+G
+        网格设置(G)...	
+    辅助线(U)	
+        显示辅助线(S)	Ctrl+;
+        锁定辅助线(L)	Ctrl+Alt+;
+        靠齐辅助线(N)	Ctrl+Shift+;
+        辅助线靠齐元素(E)	Ctrl+Shift+/
+    插件(N)	
+        播放(P)	Ctrl+Alt+P
+        停止(S)	Ctrl+Alt+X
+        播放全部(A)	Ctrl+Alt+Shift+P
+        停止全部(T)	Ctrl+Alt+Shift+X
+    显示面板(P)	F4
+   插入记录(I)	
+    标签(G)...	Ctrl+E
+    图像(I)	Ctrl+Alt+I
+  
+    媒体(M)	[/td][/
+        Flash(F)	Ctrl+Alt+F
+    表格(T)	Ctrl+Alt+T
+    表单(F)	
+    命名锚记(N)	Ctrl+Alt+A
+        特殊字符(C)	
+            换行符(E)	Shift+Return
+            不换行空格(K)	Ctrl+Shift+Space
+    模板对象(O)	
+        可编辑区域(E)	Ctrl+Alt+V
+修改(M)	
+    页面属性(P)...	Ctrl+J
+    CSS样式(Y)	Shift+F11
+    快速标签编辑器(Q)...	Ctrl+T
+    建立链接(L)...	Ctrl+L
+    移除链接(R)	Ctrl+Shift+L
+    表格(T)	
+        选择表格(S)	Ctrl+A
+        合并单元格(M)	Ctrl+Alt+M
+        拆分单元格(P)...	Ctrl+Alt+S
+        插入行(N)	Ctrl+M
+        插入列(C)	Ctrl+Shift+A
+        删除行(D)	Ctrl+Shift+M
+        删除列(E)	Ctrl+Shift+-
+        增加列宽(A)	Ctrl+Shift+]
+        减少列宽(U)	Ctrl+Shift+[
+    排列顺序(A)	
+        左对齐(L)	Ctrl+Shift+1
+        右对齐(R)	Ctrl+Shift+3
+        上对齐(T)	Ctrl+Shift+4
+        对齐下缘(B)	Ctrl+Shift+6
+        设成宽度相同(W)	Ctrl+Shift+7
+        设成高度相同(H)	Ctrl+Shift+9
+    时间轴(M)	
+        增加对象到时间轴(A)	Ctrl+Alt+Shift+T
+文本(T)	
+    缩进(I)	Ctrl+Alt+]
+    凸出(O)	Ctrl+Alt+[
+    段落格式(F)	
+        无(N)	Ctrl+0
+        段落(P)	Ctrl+Shift+P
+        标题 1	Ctrl+1
+        标题 2	Ctrl+2
+        标题 3	Ctrl+3
+        标题 4	Ctrl+4
+        标题 5	Ctrl+5
+        标题 6	Ctrl+6
+    对齐(A)	
+        左对齐(L)	Ctrl+Alt+Shift+L
+        居中对齐(C)	Ctrl+Alt+Shift+C
+        右对齐(R)	Ctrl+Alt+Shift+R
+        两端对齐(J)	Ctrl+Alt+Shift+J
+    样式(S)	
+        粗体(B)	Ctrl+B
+        斜体(I)	Ctrl+I
+    改变大小(H)	
+    检查拼写(K)	Shift+F7
+命令(C)	
+    开始录制(S)	Ctrl+Shift+X
+站点(S)	
+    获取(G)	Ctrl+Shift+D
+    取出(C)	Ctrl+Alt+Shift+D
+    上传(P)	Ctrl+Shift+U
+    存回(I)	Ctrl+Alt+Shift+U
+    检查站点范围的链接(W)	Ctrl+F8
+窗口(W)	
+    插入(I)	Ctrl+F2
+    属性(P)	Ctrl+F3
+    CSS样式(C)	Shift+F11
+    AP 元素(L)	F2
+    数据库(D)	Ctrl+Shift+F10
+    绑定(B)	Ctrl+F10
+    服务器行为(O)	Ctrl+F9
+    组件(S)	Ctrl+F7
+    文件(F)	F8
+    资源(A)	F11
+    代码片断(N)	Shift+F9
+    标签检查器(T)	F9
+    行为(E)	Shift+F4
+    结果(R)	F7
+    参考(F)	Shift+F1
+    历史记录(H)	Shift+F10
+    框架(M)	Shift+F2
+    代码检查器(D)	F10
+    时间轴	Alt+F9
+    显示面板(W)	F4
+帮助(H)	
+    Dreamweaver 帮助(D)	F1
+    ColdFusion 帮助(C)	Ctrl+F1
+    参考(R)	Shift+F1
+“文件”面板的“选项”菜单和站点面板文件(F)	
+    新建文件(N)	Ctrl+Shift+N
+    新建文件夹(F)	Ctrl+Alt+Shift+N
+    重命名(R)	F2
+    删除(D)	Del
+    检查链接(L)	Shift+F8
+编辑(E)	
+    剪切(T)	Ctrl+X
+    拷贝(C)	Ctrl+C
+    粘贴(P)	Ctrl+V
+    重制(D)	Ctrl+D
+    全选(A)	Ctrl+A
+查看(V)	
+    刷新(R)	F5
+    站点地图选项(S)	
+        显示/隐藏链接(L)	Ctrl+Shift+Y
+        作为根查看(V)	Ctrl+Shift+R
+        显示网页标题(P)	Ctrl+Shift+T
+    站点地图(E)	Alt+F8
+站点(S)	
+    取出(H)	Ctrl+Alt+Shift+D
+    上传(U)	Ctrl+Shift+U
+    存回(I)	Ctrl+Alt+Shift+U
+    检查站点范围的链接(W)	Ctrl+F8
+    链接到新文件(N)...	Ctrl+Shift+N
+    链接到已有文件(X)...	Ctrl+Shift+K
+    改变链接(L)...	Ctrl+L
+    撤消链接(V)	Ctrl+Shift+L
+代码编辑复制	Ctrl+C,Ctrl+Ins
+粘贴	Ctrl+V,Shift+Ins
+选择性粘贴	Ctrl+Shift+V
+剪切	Ctrl+X,Shift+Del
+用 # 环绕	Ctrl+Shift+3
+删除左侧单词	Ctrl+BkSp
+删除右侧单词	Ctrl+Del
+选择上一行	Shift+Up
+选择下一行	Shift+Down
+选择左侧字符	Shift+Left
+选择右侧字符	Shift+Right
+选择到上页	Shift+PgUp
+选择到下页	Shift+PgDn
+左移单词	Ctrl+Left
+右移单词	Ctrl+Right
+选择单词左边	Ctrl+Shift+Left
+选择单词右边	Ctrl+Shift+Right
+移动到行头	Home
+移动到行尾	End
+选择到行头	Shift+Home
+选择到行尾	Shift+End
+移动到文件头	Ctrl+Home
+移动到文件尾	Ctrl+End
+选择到文件开始	Ctrl+Shift+Home
+选择到文件尾	Ctrl+Shift+End
+复制2	Ctrl+Ins
+粘贴2	Shift+Ins
+剪切2	Shift+Del
+代码片断	Shift+F9
+文档编辑退出程序	Alt+F4
+转到下一单词	Ctrl+Right
+转到前一单词	Ctrl+Left
+转到前一段落	Ctrl+Up
+转到下一段落	Ctrl+Down
+选择到下一单词	Ctrl+Shift+Right
+从前一单词选择	Ctrl+Shift+Left
+从前一段落选择	Ctrl+Shift+Up
+选择到下一段落	Ctrl+Shift+Down
+关闭窗口	Ctrl+F4
+编辑标签	Shift+F5
+在同一窗口新建	Ctrl+Shift+N
+在主浏览器中预览	F12
+在副浏览器中预览	Ctrl+F12,Shift+F12
+在副浏览器中预览	Shift+F12
+在 Device Central 中预览	Ctrl+Alt+F12
+退出段落	Ctrl+Return
+活动数据模式	Ctrl+R
+打印代码	Ctrl+P
+下一文档	Ctrl+Tab
+前一文档	Ctrl+Shift+Tab
+站点窗口关闭窗口	Ctrl+F4
+退出程序	Alt+F4
+打开	Return
+在主浏览器中预览	F12
+在副浏览器中预览	Shift+F12
+在 Device Central 中预览	Ctrl+Alt+F12
+取消FTP	Esc
+
