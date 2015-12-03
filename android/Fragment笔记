@@ -1,0 +1,11 @@
+Fragment的使用越来越普遍了，掌握它的生命周期以及注意事项时非常有必要的
+，首先
+All subclasses of Fragment must include a public empty constructor. The framework will often re-instantiate a fragment class when needed, in particular during state restore, and needs to be able to find this constructor to instantiate it.
+也就是说每个继承Fragment的类都必须要有公开的构造方法，以便fragment能在需要的时候还原原来的状态。感觉很难理解？通俗的说就是：SDK还原fragment数据的时候，肯定先通过调用XXX.newInstance()方法，获取到fragment的实例对象。这就是为什么要提供一个公开的构造方法的原因了！！
+其次，生命周期是必须了解的，这个就没必要废话了，网上搜下到处都是。
+重点来了，fragment使用时常遇到的情况是，在一个activity中通过菜单选项的点击来切换不同的fragment，通常是需要保存fragment的状态的，就如编辑个人信息模块时点击其他菜单，返回时你编辑的信息应该要保存的，而不是再次初始化。这时fragment的hide/show方法就派上用场了！
+很快聪明的你就会发现fragment的生命周期怎么不走了？onPause方法怎么不调用了？onResume怎么只调用一次了？
+这时此时方法 onHiddenChanged派上用场了，当fragment隐藏时，该方法会调用传入参数为true表示该fragment被隐藏了，当fragment调用了show方法后，该方法传入的参数为false，表示该fragment正在显示！
+所以总结起来，如果使用hide/show方法来控制fragment的使用时，原本需要在onResume以及onPause方法做的事情就可以迁移到 onHiddenChanged时进行管理，如：
+if (hidden) {// 不在最前端界面显示				AA.onPause();			} else {// 重新显示到最前端中				BB.onResume();					}
+可以自行做个demo测试，下面贴出完整的生命周期：
