@@ -4,3 +4,6 @@ https://github.com/bm-x/PhotoView
 
 java-android异常知识点
 http://blog.csdn.net/wangbole/article/details/8161524
+
+android反编译安全问题
+http://bbs.csdn.net/topics/390598569
