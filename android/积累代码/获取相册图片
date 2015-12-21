@@ -1,0 +1,54 @@
+调用系统相册
+Intent intent = new Intent(Intent.ACTION_PICK);  
+intent.setType("image/*");//相片类型  
+startActivityForResult(intent, SELECT_PICTURE);  
+
+
+获取返回值
+//小米返回file:\\，其他手机content:\\或者bitmap
+  @Override
+		public void onActivityResult(int requestCode, int resultCode, Intent data) {
+			  if (resultCode == getActivity().RESULT_OK) {
+		            if (requestCode == SELECT_PICTURE) {
+		                
+		            	if(data==null){
+		            		Show.showToast(baseactivity,"无效图片");
+		            		return;
+		            	}
+		            	Uri uri = data.getData();  
+		            	if(uri==null){
+		            		Show.showToast(baseactivity,"无效图片");
+		            		return;
+		            	}
+		            	
+		            	if(uri.toString().startsWith("file://")){
+		            		Bitmap bitmap2 = compressImage(uri.toString().replace("file://",""));
+			                base_bitmap =  com.interest.iWen.util.BitmapUtil.bitmapToBase64(bitmap2,false);
+		            	}else{
+		            		//如果返回content:
+			            	String rs = getRealPathFromURI(baseactivity,uri);
+			            	if(rs==null){
+			            		baseactivity.showToast("获取图片失败");
+			            		return;
+			            	}
+			            	Bitmap bitmap2 = compressImage(rs);
+			                base_bitmap =  com.interest.iWen.util.BitmapUtil.bitmapToBase64(bitmap2,false);
+		            	}
+		                goSaveAvatar(getActivity().getSharedPreferences("iWen", getActivity().MODE_PRIVATE).getString("uid", null), base_bitmap);
+		            }
+		        }
+		    }
+		    
+		    public static Bitmap compressImage(String path) {
+          BitmapFactory.Options options = new BitmapFactory.Options();
+          options.inJustDecodeBounds = true;
+          Bitmap bitmap = BitmapFactory.decodeFile(path, options); // 此时返回 bm 为空
+          options.inJustDecodeBounds = false; // 缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
+          int be = (int) (options.outHeight / (float) 640);
+          if (be <= 0)
+              be = 1;
+          options.inSampleSize = be; // 重新读入图片，注意此时已经把 options.inJustDecodeBounds
+          // 设回 false 了
+          bitmap = BitmapFactory.decodeFile(path, options);
+          return bitmap;
+        }
