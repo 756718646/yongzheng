@@ -38,8 +38,8 @@ startActivityForResult(intent, SELECT_PICTURE);
 		            }
 		        }
 		    }
-		    
-		    public static Bitmap compressImage(String path) {
+	  //文件转bitmap	    
+	  public static Bitmap compressImage(String path) {
           BitmapFactory.Options options = new BitmapFactory.Options();
           options.inJustDecodeBounds = true;
           Bitmap bitmap = BitmapFactory.decodeFile(path, options); // 此时返回 bm 为空
@@ -52,3 +52,17 @@ startActivityForResult(intent, SELECT_PICTURE);
           bitmap = BitmapFactory.decodeFile(path, options);
           return bitmap;
         }
+
+	//从数据库查找
+	public static String getRealPathFromURI(Activity activity,Uri contentUri) {
+	        String res = null;
+	        String[] proj = { MediaStore.Images.Media.DATA };
+	        Cursor cursor = activity.getContentResolver().query(contentUri, proj, null, null, null);
+	        if(cursor==null)return null;
+	        if(cursor.moveToFirst()){;
+	            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+	            res = cursor.getString(column_index);
+	        }
+	        cursor.close();
+	        return res;
+	 }
