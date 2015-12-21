@@ -25,3 +25,9 @@ http://blog.csdn.net/jason0539/article/details/39120499
 
 Android开源框架分类
 https://github.com/yeungeek/awesome-android-libraries#imagecache
+
+
+android动画设计--InstaMaterial
+https://www.aswifter.com/2015/07/12/InstaMaterial-android-open-source-project/
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1217/3782.html
+
