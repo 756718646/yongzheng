@@ -39,3 +39,6 @@ Material Design动画
 http://www.cnbeta.com/articles/354101.htm
 动画教程
 https://github.com/codepath/android_guides/wiki/Shared-Element-Activity-Transition
+
+gradle的教程
+http://segmentfault.com/a/1190000002439306
