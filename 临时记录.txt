@@ -42,3 +42,6 @@ https://github.com/codepath/android_guides/wiki/Shared-Element-Activity-Transiti
 
 gradle的教程
 http://segmentfault.com/a/1190000002439306
+
+RxJava Essentials 中文翻译版
+http://rxjava.yuxingxin.com/index.html
