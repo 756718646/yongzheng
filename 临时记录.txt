@@ -45,3 +45,6 @@ http://segmentfault.com/a/1190000002439306
 
 RxJava Essentials 中文翻译版
 http://rxjava.yuxingxin.com/index.html
+
+圆弧进度条绘制
+https://github.com/LarsWerkman/HoloColorPicker
