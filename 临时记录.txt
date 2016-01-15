@@ -48,3 +48,7 @@ http://rxjava.yuxingxin.com/index.html
 
 圆弧进度条绘制
 https://github.com/LarsWerkman/HoloColorPicker
+
+toolbar 上下滑动渐变
+http://blog.csdn.net/marktheone/article/details/46663151
+
