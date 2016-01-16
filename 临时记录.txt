@@ -52,3 +52,5 @@ https://github.com/LarsWerkman/HoloColorPicker
 toolbar 上下滑动渐变
 http://blog.csdn.net/marktheone/article/details/46663151
 
+viewpager下拉冲突
+http://blog.csdn.net/aaawqqq/article/details/43824631
