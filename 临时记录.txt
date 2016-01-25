@@ -57,3 +57,6 @@ http://blog.csdn.net/aaawqqq/article/details/43824631
 
 react-navite 开发资料
 http://www.jianshu.com/p/89771e8bcee5
+
+控件的git
+https://github.com/tangkai
