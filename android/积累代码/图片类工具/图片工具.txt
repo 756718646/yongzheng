@@ -1,4 +1,7 @@
-private  Bitmap drawable2Bitmap(Drawable drawable) {  
+	/**
+	* drawable 转 Bitmap
+	**/
+	private  Bitmap drawable2Bitmap(Drawable drawable) {  
 	        if (drawable instanceof BitmapDrawable) {  
 	            return ((BitmapDrawable) drawable).getBitmap();  
 	        } else if (drawable instanceof NinePatchDrawable) {  
@@ -17,3 +20,105 @@ private  Bitmap drawable2Bitmap(Drawable drawable) {
 	            return null;  
 	        }  
 	    }  
+
+    /**
+     * content://media/external/images/media/29883 转文件路径
+     * @param activity
+     * @param contentUri
+     * @return
+     */
+    public static String getRealPathFromURI(Activity activity,Uri contentUri) {
+        String res = null;
+        String[] proj = { MediaStore.Images.Media.DATA };
+        Cursor cursor = activity.getContentResolver().query(contentUri, proj, null, null, null);
+        if(cursor.moveToFirst()){;
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            res = cursor.getString(column_index);
+        }
+        cursor.close();
+        return res;
+    }
+    
+      /**
+     * base64转bitmap
+     * @param string
+     * @return
+     */
+    public static Bitmap stringtoBitmap(String string){
+        //将字符串转换成Bitmap类型
+        Bitmap bitmap=null;
+        try {
+            byte[]bitmapArray;
+            bitmapArray=Base64.decode(string, Base64.DEFAULT);
+            bitmap=BitmapFactory.decodeByteArray(bitmapArray, 0, bitmapArray.length);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return bitmap;
+    }
+    
+    
+    /**
+     * bitmap 转 base64字符串
+     * @param bitmap 原图
+     * @return
+     */
+    public static String bitmaptoString(Bitmap bitmap){
+        if (bitmap==null)return null;
+        //将Bitmap转换成字符串
+        String string=null;
+        ByteArrayOutputStream bStream=new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,50,bStream);
+        byte[]bytes=bStream.toByteArray();
+        string=Base64.encodeToString(bytes, Base64.DEFAULT);
+        return string;
+    }
+    
+    /**
+     * 图片压缩
+     * @param image
+     * @return
+     */
+    public static Bitmap compressImage(String path) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        Bitmap bitmap = BitmapFactory.decodeFile(path, options); // 此时返回 bm 为空
+        options.inJustDecodeBounds = false; // 缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
+        int be = (int) (options.outHeight / (float) 320);
+        if (be <= 0)
+            be = 1;
+        options.inSampleSize = be; // 重新读入图片，注意此时已经把 options.inJustDecodeBounds
+        // 设回 false 了
+        bitmap = BitmapFactory.decodeFile(path, options);
+        return bitmap;
+    }
+
+    //图片压缩
+    public static Bitmap compressBmpFromBmp(Bitmap image) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        int options = 100;
+        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        while (baos.toByteArray().length / 1024 > 100) {
+            baos.reset();
+            options -= 10;
+            image.compress(Bitmap.CompressFormat.JPEG, options, baos);
+        }
+        ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());
+        Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);
+        return bitmap;
+    }
+    //图片压缩
+    public static Bitmap compressImage(String path) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        Bitmap bitmap = BitmapFactory.decodeFile(path, options); // 此时返回 bm 为空
+        options.inJustDecodeBounds = false; // 缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
+        int be = (int) (options.outHeight / (float) 640);
+        if (be <= 0)
+            be = 1;
+        options.inSampleSize = be; // 重新读入图片，注意此时已经把 options.inJustDecodeBounds
+        // 设回 false 了
+        bitmap = BitmapFactory.decodeFile(path, options);
+        return bitmap;
+    }
