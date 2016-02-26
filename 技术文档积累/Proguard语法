@@ -24,3 +24,67 @@
 　　-assumenosideeffects class_specification 假设调用不产生任何影响，在proguard代码优化时会将该调用remove掉。如system.out.println和Log.v等等
 　
 　　-dontwarn [class_filter] 不提示warnning
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　项目配置(eventbus,gson)
+
+-keep class com.google.**{*;}
+
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+
+##---------------Begin: proguard configuration for Gson  ----------
+# Gson uses generic type information stored in a class file when working with fields. Proguard
+# removes such information by default, so configure it to keep all of it.
+-keepattributes Signature
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+#-keep class com.google.gson.stream.** { *; }
+# Application classes that will be serialized/deserialized over Gson
+-keep class com.bean.** { *; } ##这里需要改成解析到哪个  javabean
+
+##---------------End: proguard configuration for Gson  ----------
+
+
+
+##---------------Begin: eventbus 配置----------
+-keep class com.ypy.eventbus.**{*;}#可以不用这句
+
+-keepclassmembers class ** {
+    public void onEvent*(**);
+}
+
+# Only required if you use AsyncExecutor
+-keepclassmembers class * extends de.greenrobot.event.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
+##---------------End: eventbus  ----------
+
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
+　　
