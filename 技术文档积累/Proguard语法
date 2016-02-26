@@ -1,0 +1,26 @@
+　  
+　  概述
+　  
+　  Proguard代码混淆工具：可以对代码进行去冗余压缩，代码优化，代码混淆等。
+　  
+　  在Android中的主要应用就是对代码混淆：就是将类名，方法名，Field名变成如a,b,c或者1,2,3等难以阅读和理解的名字
+　  
+　  ，以防止逆向工程和被反编译阅读源码。 
+　  
+　  -libraryjars class_path 应用的依赖包，如android-support-v4
+　
+　　-keep [,modifier,...] class_specification 不混淆某些类
+　　
+　　-keepclassmembers [,modifier,...] class_specification 不混淆类的成员
+　　
+　　-keepclasseswithmembers [,modifier,...] class_specification 不混淆类及其成员
+　　
+　　-keepnames class_specification 不混淆类及其成员名
+　　
+　　-keepclassmembernames class_specification 不混淆类的成员名
+　　
+　　-keepclasseswithmembernames class_specification 不混淆类及其成员名
+　　
+　　-assumenosideeffects class_specification 假设调用不产生任何影响，在proguard代码优化时会将该调用remove掉。如system.out.println和Log.v等等
+　
+　　-dontwarn [class_filter] 不提示warnning
