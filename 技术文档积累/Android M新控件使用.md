@@ -89,8 +89,30 @@ http://blog.csdn.net/feiduclear_up/article/details/46514791
     setErrorEnabled():设置是否可以显示错误信息。
     setError()：设置当用户输入错误时弹出的错误信息。
     
+    TextInputLayout不能单独使用，需要包裹EditView组件。
     
+######Snackbar
+
+Snackbar提供了一个介于Toast和AlertDialog之间轻量级控件，它可以很方便的提供消息的提示和动作反馈。
+
+
+  final Snackbar snackbar = Snackbar.make(but,"测试弹出提示",Snackbar.LENGTH_LONG);
+        snackbar.show();
+        snackbar.setAction("取消",new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        });
         
+设置Action行为事件，使用的方法是public Snackbar setAction (CharSequence text, View.OnClickListener listener); Action的字体颜色默认使用系统主题中的如下颜色
+<item name="colorAccent">#ff0000</item>
+当然你可以通过代码去改变Action的字体颜色：Snackbar setActionTextColor (int color)；
+
+
+
+
+
         
         
         
