@@ -113,9 +113,135 @@ Snackbar提供了一个介于Toast和AlertDialog之间轻量级控件，它可�
     }
 
 
-设置Action行为事件，使用的方法是public Snackbar setAction (CharSequence text, View.OnClickListener listener); Action的字体颜色默认使用系统主题中的如下颜色
+设置Action行为事件，使用的方法是public Snackbar setAction (CharSequence text, View.OnClickListener listener);
+
+Action的字体颜色默认使用系统主题中的如下颜色
+
 <item name="colorAccent">#ff0000</item>
+
 当然你可以通过代码去改变Action的字体颜色：Snackbar setActionTextColor (int color)；
+
+######TabLayout
+
+在布局上面使用
+
+    TabLayout配合viewpager使用
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        app:tabSelectedTextColor="@android:color/holo_red_light"
+        app:tabTextColor="@android:color/black"
+        app:tabIndicatorColor="@android:color/holo_red_light"
+        android:layout_width="match_parent"
+        app:tabIndicatorHeight="1dp"
+        android:layout_height="wrap_content"  />
+        
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    
+    
+    代码
+    
+     private void initTab(){
+
+        viewPager = (ViewPager) super.findViewById(R.id.viewPager);
+        tabLayout = (TabLayout) super.findViewById(R.id.tabs);
+
+        List<String> tabList = new ArrayList<>();
+        tabList.add("Tab1");
+        tabList.add("Tab2");
+        tabList.add("Tab3");
+        tabList.add("Tab4");
+        tabList.add("Tab5");
+        tabList.add("Tab6");
+        tabList.add("Tab7");
+        tabList.add("Tab8");
+        tabList.add("Tab9");
+        tabList.add("Tab10");
+
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);//设置tab模式，当前为系统默认模式
+
+        for (int i=0;i<tabList.size();i++){
+            tabLayout.addTab(tabLayout.newTab().setText(tabList.get(i)));//添加tab选项卡
+        }
+
+
+        List<Fragment> fragmentList = new ArrayList<>();
+        for (int i = 0; i <tabList.size(); i++) {
+            Fragment f1 = new TabFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("content", "xxxxxxx"+i);
+            f1.setArguments(bundle);
+            fragmentList.add(f1);
+        }
+
+
+        TabFragmentAdapter fragmentAdapter = new TabFragmentAdapter(getSupportFragmentManager(), fragmentList, tabList);
+        viewPager.setAdapter(fragmentAdapter);//给ViewPager设置适配器
+        tabLayout.setupWithViewPager(viewPager);//将TabLayout和ViewPager关联起来。
+        tabLayout.setTabsFromPagerAdapter(fragmentAdapter);//给Tabs设置适配器
+    }
+    
+    Fragment类
+    
+    public class TabFragment extends Fragment{
+
+    private String content;
+    private View view;
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.item, container,false);
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        content = getArguments().getString("content");
+        TextView tvContent = (TextView) view.findViewById(R.id.tv_tab_content);
+        tvContent.setText(content + "");
+    }
+
+}
+
+TabFragmentAdapter适配器类
+
+
+public class TabFragmentAdapter extends FragmentStatePagerAdapter {
+
+    private List<Fragment> mFragments;
+    private List<String> mTitles;
+
+    public TabFragmentAdapter(FragmentManager fm, List<Fragment> fragments, List<String> titles) {
+        super(fm);
+        mFragments = fragments;
+        mTitles = titles;
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+        return mFragments.get(position);
+    }
+
+    @Override
+    public int getCount() {
+        return mFragments.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return mTitles.get(position);
+    }
+
+}
+
+
+    
+        
 
 
 
