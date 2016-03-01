@@ -9,3 +9,10 @@ AppBarLayout 是继承LinerLayout实现的一个ViewGroup容器组件，它是�
 从开发文档中可以了解到，CoordinatorLayout是一个增强型的FrameLayout。它的作用有两个
 
 作为一个布局的根布局 最为一个为子视图之间相互协调手势效果的一个协调布局
+
+
+###Android M新控件之FloatingActionButton，TextInputLayout，Snackbar，TabLayout的使用
+
+资料地址:http://blog.csdn.net/feiduclear_up/article/details/46500865
+
+http://blog.csdn.net/feiduclear_up/article/details/46514791
