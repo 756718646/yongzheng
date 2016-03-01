@@ -269,8 +269,10 @@ TabLayout常用的方法如下：
 - setupWithViewPager(ViewPager viewPager) 和 ViewPager 联动
 
     
-        
+ 
+注意 ：有这么一种情况，当Tabs中的内容超过了手机屏幕的宽度时，Tabs选项卡中的tab为什么不支持水平滑动？其实TabLayout是支持水平滑动的，只需要你在代码中添加如下一行即可：
 
+tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);//设置tab模式
 
 
 
