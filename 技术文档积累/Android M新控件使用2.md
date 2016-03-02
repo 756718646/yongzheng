@@ -59,7 +59,7 @@ FloatingActionButton是最简单的使用CoordinatorLayout的例子，FloatingAc
 
 
 
-
+######列表滚到隐藏toolbar
 
 效果显示，视图滚动时，Toolbar会隐藏，这个效果是Android Support Library里面,新增的CoordinatorLayout, AppBarLayout实现的。通过AppBarLayout的子视图的属性控制。观察AppBarLayout的子布局，Toobar有app:layout_scrollFlags属性，这就是控制滑动时视图效果的属性。app:layout_scrollFlags有四个值：
 
