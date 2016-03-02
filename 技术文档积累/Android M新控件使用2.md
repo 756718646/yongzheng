@@ -12,3 +12,46 @@ CoordinatorLayout使用新的思路通过协调调度子布局的形式实现触
 CoordinatorLayout通过设置子View的 Behaviors来调度子View。 
 
 系统（Support V7）提供了AppBarLayout.Behavior, AppBarLayout.ScrollingViewBehavior, FloatingActionButton.Behavior, SwipeDismissBehavior<V extends View> 等。
+
+
+######简单例子
+
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_done" />
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+CoordinatorLayout作为“super-powered FrameLayout”，设置子视图的android:layout_gravity属性控制位置。
+
+         
+          
+
+        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Snackbar.make(view,"FAB", Snackbar.LENGTH_LONG)
+                        .setAction("cancel", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                //这里的单击事件代表点击消除Action后的响应事件
+                            }
+                        })
+                        .show();
+            }
+        });
+
