@@ -55,3 +55,59 @@ CoordinatorLayout作为“super-powered FrameLayout”，设置子视图的andro
             }
         });
 
+FloatingActionButton是最简单的使用CoordinatorLayout的例子，FloatingActionButton默认使用FloatingActionButton.Behavior。
+
+
+
+
+
+效果显示，视图滚动时，Toolbar会隐藏，这个效果是Android Support Library里面,新增的CoordinatorLayout, AppBarLayout实现的。通过AppBarLayout的子视图的属性控制。观察AppBarLayout的子布局，Toobar有app:layout_scrollFlags属性，这就是控制滑动时视图效果的属性。app:layout_scrollFlags有四个值：
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_done" />
+
+</android.support.design.widget.CoordinatorLayout>
+
+为了使得Toolbar有滑动效果，必须做到如下三点: 
+1. CoordinatorLayout作为布局的父布局容器。 
+2. 给需要滑动的组件设置 app:layout_scrollFlags=”scroll|enterAlways” 属性。 
+3. 给滑动的组件设置app:layout_behavior属性
+4. 那个viewpager里面的fragment是RecyclerView,listview不行
