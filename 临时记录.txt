@@ -67,3 +67,5 @@ http://www.fwqtg.net/%E3%80%90android%E3%80%91%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%
 
 app主题切换实现
 
+ Android关于Dex拆分(MultiDex)技术详解
+http://blog.csdn.net/jiangwei0910410003/article/details/50799573
