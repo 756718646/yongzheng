@@ -275,7 +275,11 @@ TabLayout常用的方法如下：
 tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);//设置tab模式
 
 
+###### 第三方库实现水波纹
 
+https://github.com/traex/RippleEffect#readme
+
+![ABC](https://github.com/traex/RippleEffect/blob/master/demo.gif) 
 
         
         
