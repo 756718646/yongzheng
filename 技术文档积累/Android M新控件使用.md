@@ -281,6 +281,23 @@ https://github.com/traex/RippleEffect#readme
 
 ![ABC](https://github.com/traex/RippleEffect/blob/master/demo.gif) 
 
+
+###### android 5.0上，阴影elevation
+
+1. 控件必须设置背景色，且不能为透明。
+2. 阴影是绘制于父控件上的，所以控件与父控件的边界之间需有足够空间绘制出阴影才行。
+例如
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:elevation="10dp"
+        android:background="#eeeeee"
+        android:gravity="center"
+        android:text="123456"/>
         
+
+
+
         
         
