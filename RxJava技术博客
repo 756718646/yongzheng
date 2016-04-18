@@ -78,4 +78,34 @@ RxJava resources
  [When should one use RxJava Observable and when simple Callback on Android?](http://stackoverflow.com/questions/21890338/when-should-one-use-rxjava-observable-and-when-simple-callback-on-android)
 
 
+临时笔记
+
+发送端
+Observable		
+	call()
+
+例如
+	Observable.just()									//from(T) 单个
+	Observable.create(new Observable.OnSubscribe())		//自定义发送处理
+	Observable observable = Observable.from(words);		//from(T[])数组
+
+接收端
+Observer implements Subscriber
+	onNext()
+	onCompleted()
+	onError()
+
+
+发送事件方法
+发送端.subscribe(接收端)
+接收端.subscribe(发送端)
+
+
+
+线程控制 —— Scheduler (一)
+	在不指定线程的情况下， RxJava 遵循的是线程不变的原则，
+	即：在哪个线程调用 subscribe()，就在哪个线程生产事件；在哪个线程生产事件，
+	就在哪个线程消费事件。如果需要切换线程，就需要用到 Scheduler （调度器）。
+
+
 
