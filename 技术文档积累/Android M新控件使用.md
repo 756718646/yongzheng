@@ -299,6 +299,35 @@ https://github.com/traex/RippleEffect#readme
         android:text="123456"/>
         
 
+### Ripple Drawable 使用
+
+资料地址:
+        http://www.devstore.cn/new/newInfo/899.html
+        
+        http://blog.csdn.net/ljx19900116/article/details/41806917
+
+为了兼容v21下的，定义values-v21 和 values 。在styles.xml文件下面使用
+<style name="MySelectBg">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+或者
+
+    <style name="MySelectBg">
+        <item name="android:background">@drawable/bg_selector</item>
+    </style>
+    
+    如果在v21前的，使用selector。
+    
+    <?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true" android:drawable="@color/c_eeeeee"/>
+    <item android:state_focused="true" android:drawable="@color/c_eeeeee"/>
+    <item android:drawable="@color/withe"/>
+
+</selector>
+
 
 
         
