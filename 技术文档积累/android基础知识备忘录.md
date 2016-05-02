@@ -1,5 +1,6 @@
 ### Android xml资源文件中@、@android:type、@*、？、@+含义和区别
 
+源地址:http://www.cnblogs.com/greatverve/archive/2011/12/27/Android-xml.html
 
 一.@代表引用资源
 
