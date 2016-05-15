@@ -69,3 +69,5 @@ app主题切换实现
 
  Android关于Dex拆分(MultiDex)技术详解
 http://blog.csdn.net/jiangwei0910410003/article/details/50799573
+
+ViewStub 知识点
