@@ -162,12 +162,13 @@ Action的字体颜色默认使用系统主题中的如下颜色
         tabList.add("Tab10");
 
         tabLayout.setTabMode(TabLayout.MODE_FIXED);//设置tab模式，当前为系统默认模式
-
+        
+        //如果使用setupWithViewPager，就可以不用下面自己addtab
         for (int i=0;i<tabList.size();i++){
             tabLayout.addTab(tabLayout.newTab().setText(tabList.get(i)));//添加tab选项卡
         }
 
-
+        
         List<Fragment> fragmentList = new ArrayList<>();
         for (int i = 0; i <tabList.size(); i++) {
             Fragment f1 = new TabFragment();
@@ -180,8 +181,8 @@ Action的字体颜色默认使用系统主题中的如下颜色
 
         TabFragmentAdapter fragmentAdapter = new TabFragmentAdapter(getSupportFragmentManager(), fragmentList, tabList);
         viewPager.setAdapter(fragmentAdapter);//给ViewPager设置适配器
-        tabLayout.setupWithViewPager(viewPager);//将TabLayout和ViewPager关联起来。
-        tabLayout.setTabsFromPagerAdapter(fragmentAdapter);//给Tabs设置适配器
+        tabLayout.setupWithViewPager(viewPager);//将TabLayout和ViewPager关联起来。（实现getPageTitle）
+  
     }
     
     Fragment类
