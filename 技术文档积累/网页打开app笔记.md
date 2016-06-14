@@ -1,5 +1,7 @@
 ### 基础知识
 
+资料:http://blog.csdn.net/androidzhaoxiaogang/article/details/6856201
+
 intent-filter的data属性详述
 
 一、定义 
@@ -40,5 +42,11 @@ pathPattern 用表达式来匹配整个路径，这里需要说下匹配符号�
                     android:port="44"/>
             </intent-filter>
         </activity>
+        
+        
+        
+### 打开app
+
+资料:Android 通过网页打开自己的APP(scheme)
 
 
