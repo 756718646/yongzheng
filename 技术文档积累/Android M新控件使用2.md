@@ -135,4 +135,8 @@ FloatingActionButton是最简单的使用CoordinatorLayout的例子，FloatingAc
             app:layout_scrollFlags="scroll" />
 </android.support.design.widget.AppBarLayout>
 
+属性值有:
+    scroll(和ScrollView一样),
+    enterAlways(当ScrollView往下滚动时，该View会直接往下滚动。而不用考虑ScrollView是否在滚动),
+    exitUntilCollapsed()
 
