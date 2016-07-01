@@ -111,3 +111,28 @@ FloatingActionButton是最简单的使用CoordinatorLayout的例子，FloatingAc
 2. 给需要滑动的组件设置 app:layout_scrollFlags=”scroll|enterAlways” 属性。 
 3. 给滑动的组件设置app:layout_behavior属性
 4. 那个viewpager里面的fragment是RecyclerView,listview不行
+
+
+### 滚动新控件使用
+
+参考资料:http://blog.csdn.net/huachao1001/article/details/51558835
+
+对应的布局文件
+
+内部的子View通过在布局中加app:layout_scrollFlags设置执行的动作，那么app:layout_scrollFlags可以设置哪些动作呢？分别如下：
+（1） scroll:值设为scroll的View会跟随滚动事件一起发生移动。
+什么意思呢？简单的说，就是当指定的ScrollView发生滚动时，该View也跟随一起滚动，就好像这个View也是属于这个ScrollView一样。
+
+<android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll" />
+</android.support.design.widget.AppBarLayout>
+
+
