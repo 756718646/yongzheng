@@ -2,7 +2,11 @@
 
 http://developer.51cto.com/art/201104/255127.htm
 
-### 简介
+### 历史简介
+
+http://liuzhijun.iteye.com/blog/1512780/
+
+### 使用简介
 
 Stub对象用来提供测试时所需要的测试数据，可以对各种交互设置相应的回应。例如我们可以设置方法调用的返回值等等。
 Mockito中 when(…).thenReturn(…) 这样的语法便是设置方法调用的返回值。
