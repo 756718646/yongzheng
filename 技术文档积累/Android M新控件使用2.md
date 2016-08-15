@@ -140,3 +140,6 @@ FloatingActionButton是最简单的使用CoordinatorLayout的例子，FloatingAc
     enterAlways(当ScrollView往下滚动时，该View会直接往下滚动。而不用考虑ScrollView是否在滚动),
     exitUntilCollapsed()
 
+### CoordinatorLayout高级用法-自定义Behavior
+
+http://blog.csdn.net/qibin0506/article/details/50290421
