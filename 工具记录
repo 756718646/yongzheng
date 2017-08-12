@@ -12,3 +12,6 @@ showdoc
 开源md编辑器
 
 http://pandao.github.io/editor.md/
+
+Ubuntu颜色吸取工具(gpick)
+sudo apt-get install gpick
